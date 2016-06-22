@@ -1,9 +1,14 @@
 Package: r2sas
-Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Version: 0.0.9000
+Title: Write SAS Code
+Description: Writes SAS code for importing a data.frame (exported to text file) into SAS
+Authors@R: person("Matt", "Kelliher-Gibson", email = "mkg@mattkellihergibson.com",
+	role = c("aut", "cre"))
+URL: https://github.com/MattKelliher-Gibson/r2sas
+BugReports: https://github.com/MattKelliher-Gibson/r2sas/issues
+Depends:
+	R (>= 3.3.0)
+Imports:
+	stringr
+License: GNU
 LazyData: TRUE

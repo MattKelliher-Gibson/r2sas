@@ -7,6 +7,8 @@
 #' @param file the location of the exported data.frame where SAS will look for the data (use "\\' in windows)
 #' @param nlength the length of all numeric variables
 #'
+#' @return Returns a \code{data.frame} with one column and each row containing a line of SAS code
+#'
 #' @example
 #' foo <- data.frame(ID = c(A:Z), Value = c(1:26))
 #' sas_file <- "c\\data\\r_data.csv"
@@ -22,7 +24,7 @@ sas_import_code <- function(r_data, del, file, nlength=3){
     if(class(r_data[[i]]) == "numeric"){
       output_data <- rbind(output_data, r2sas::sas_length(i, class(r_data[[i]]), nlength))
     } else {
-      output_data <- rbind(output_data, r2sas::sas_length(i, class(r_data[[i]]), r2sas::sas_var_length(r_data, i)))
+      output_data <- rbind(output_data, r2sas::sas_length(i, class(r_data[[i]]), r2sas::sas_var_length(r_data[[i]])))
     }
   }
 
